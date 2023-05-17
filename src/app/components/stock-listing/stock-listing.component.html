@@ -24,7 +24,7 @@
     <ul class="row list-unstyled text-center mx-3">
         <div class="col-4 gx-3" *ngFor="let product of filteredProducts">
             <li class="my-3 border shadow bg-body-tertiary rounded pb-3">
-                <p class="fs-4 fw-bold my-2">{{ product.name }}</p>
+                <p class="fs-4 fw-bold my-2"> {{ product.id }}. {{ product.name }}</p>
                 <p class="fs-4 my-2" [ngClass]="product.stock > product.threshold ? 'text-success' : 'text-danger'">Estoque: {{ product.stock }} {{ product.unit }}</p>
                 <p class="fs-5 my-2">Estoque crítico: {{ product.threshold }} {{ product.unit }}</p>
                 <ul class="fs-5 my-2 mx-5 list-unstyled border rounded">Fornecedores
