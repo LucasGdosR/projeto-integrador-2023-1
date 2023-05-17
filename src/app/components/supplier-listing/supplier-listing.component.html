@@ -12,8 +12,7 @@
     <ul class="row list-unstyled text-center mx-3">
         <div class="col-4 gx-3" *ngFor="let supplier of filteredSuppliers">
             <li class="my-3 border shadow bg-body-tertiary rounded pb-3">
-                <p class="fs-4 fw-bold my-2">Código: {{ supplier.id }}</p>
-                <p class="fs-4 fw-bold my-2">{{ supplier.name }}</p>
+                <p class="fs-4 fw-bold my-2">{{ supplier.id }}. {{ supplier.name }}</p>
                 <p class="fs-5 my-2">Telefone: {{ supplier.telephone }}</p>
                 <p class="fs-5 my-2">Email: {{ supplier.email }}</p>
                 <p><button class="btn btn-danger my-3" (click)="deleteSupplier(supplier.id)">Excluir fornecedor</button></p>
