@@ -29,6 +29,16 @@ export class ProductService {
     }
     this.persist('products', this.products)
   }
+
+  editSupplier(supplier: { id: number | undefined; name: string; telephone: string; email: string; }) {
+    for (let product of this.products) {
+      const supplierIndex = product.suppliers.findIndex(s => s.id == supplier.id)
+      if (supplierIndex == -1)
+       continue;
+      product.suppliers[supplierIndex] = supplier
+    }
+    this.persist('products', this.products)
+  }
   
   persist(localKey: string, value: any) {
     localStorage.setItem(localKey, JSON.stringify(value))

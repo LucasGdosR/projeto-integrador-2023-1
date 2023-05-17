@@ -27,6 +27,7 @@ export class SupplierService {
       this.suppliers.push(supplier)
     } else {
       this.suppliers[this.suppliers.findIndex(s => s.id == supplier.id)] = supplier
+      this.productService.editSupplier(supplier)
     }
     this.persist('suppliers', this.suppliers)
   }
